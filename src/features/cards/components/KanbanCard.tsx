@@ -27,6 +27,8 @@ export function KanbanCard({
   return (
     <article
       className={styles.card}
+      data-status={card.status}
+      data-draggable={String(!disabled)}
       draggable={!disabled}
       onDragStart={() => onDragStart(card.id)}
       onDragEnd={onDragEnd}

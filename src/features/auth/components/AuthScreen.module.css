@@ -7,110 +7,114 @@
 }
 
 .panel {
-  width: min(560px, 100%);
-  padding: 32px;
+  width: min(480px, 100%);
+  padding: 24px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0)),
-    var(--surface);
-  backdrop-filter: blur(18px);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
   box-shadow: var(--shadow-lg);
 }
 
 .hero {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .eyebrow {
-  margin: 0 0 8px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .title {
-  margin: 0 0 12px;
-  font-size: clamp(2.4rem, 6vw, 3.8rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .lead {
   margin: 0;
+  font-size: 0.85rem;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .modeSwitch {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
 .modeButton,
 .modeButtonActive,
 .submitButton {
-  min-height: 48px;
+  min-height: 34px;
   border: 0;
-  border-radius: 999px;
-  font-weight: 700;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
   transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    background-color 160ms ease,
-    color 160ms ease;
+    filter 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease;
 }
 
 .modeButton {
-  background: var(--surface-muted);
+  background: var(--bg-soft);
   color: var(--muted);
 }
 
+.modeButton:hover {
+  background: var(--border);
+}
+
 .modeButtonActive {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  background: var(--accent);
   color: #ffffff;
-  box-shadow: 0 14px 28px rgba(74, 144, 226, 0.24);
 }
 
 .form {
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .field {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .label {
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 .input {
   width: 100%;
-  min-height: 52px;
-  padding: 14px 16px;
+  min-height: 36px;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface-strong);
   color: var(--text);
+  font-size: 0.88rem;
 }
 
 .input:focus {
-  outline: 3px solid rgba(74, 144, 226, 0.18);
-  border-color: var(--border-strong);
+  outline: 2px solid rgba(0, 82, 204, 0.2);
+  border-color: var(--accent);
 }
 
 .message,
 .error {
   margin: 0;
-  padding: 14px 16px;
+  padding: 10px 12px;
   border-radius: var(--radius-sm);
-  line-height: 1.65;
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
 .message {
@@ -120,19 +124,25 @@
 
 .error {
   background: var(--danger-soft);
-  color: var(--danger);
+  color: var(--danger-text);
 }
 
 .submitButton {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  background: var(--accent);
   color: #ffffff;
-  box-shadow: 0 14px 28px rgba(74, 144, 226, 0.24);
+  transition: filter 140ms ease;
 }
 
-.modeButton:hover,
-.modeButtonActive:hover,
-.submitButton:hover {
-  transform: translateY(-1px);
+.submitButton:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+@media (pointer: coarse) {
+  .modeButton,
+  .modeButtonActive,
+  .submitButton {
+    min-height: var(--control-height-touch);
+  }
 }
 
 @media (max-width: 720px) {
@@ -141,6 +151,6 @@
   }
 
   .panel {
-    padding: 24px;
+    padding: 18px;
   }
 }

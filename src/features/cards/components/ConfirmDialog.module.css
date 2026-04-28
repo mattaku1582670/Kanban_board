@@ -1,59 +1,80 @@
 .dialog {
-  padding: 28px;
+  padding: 20px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   background: var(--surface-strong);
   box-shadow: var(--shadow-lg);
 }
 
 .eyebrow {
-  margin: 0 0 8px;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .title {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .message {
-  margin: 0 0 22px;
+  margin: 0 0 18px;
+  font-size: 0.88rem;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
 }
 
 .secondaryButton,
 .dangerButton {
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  font-weight: 700;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .secondaryButton {
   border: 1px solid var(--border);
   background: var(--surface-strong);
   color: var(--text);
+  transition: background 140ms ease;
+}
+
+.secondaryButton:hover:not(:disabled) {
+  background: var(--bg-soft);
 }
 
 .dangerButton {
   border: 0;
   background: var(--danger);
   color: #ffffff;
+  transition: filter 140ms ease;
+}
+
+.dangerButton:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+@media (pointer: coarse) {
+  .secondaryButton,
+  .dangerButton {
+    min-height: var(--control-height-touch);
+  }
 }
 
 @media (max-width: 767px) {
   .dialog {
-    padding: 22px;
+    padding: 16px;
   }
 
   .actions {

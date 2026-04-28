@@ -13,7 +13,6 @@ export function Header({ board, userEmail, busy, onAddCard, onSignOut }: HeaderP
   return (
     <header className={styles.header}>
       <div className={styles.copy}>
-        <p className={styles.eyebrow}>Realtime-ready Workspace</p>
         <h1 className={styles.title}>Kanban Board</h1>
         <p className={styles.stat}>
           TODO {board.todo.length} / DOING {board.doing.length} / DONE {board.done.length}

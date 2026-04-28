@@ -1,36 +1,55 @@
 .card {
   display: grid;
-  gap: 12px;
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-left: 6px solid var(--accent);
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(9, 30, 66, 0.12);
+  border-left: 4px solid var(--accent);
   border-radius: var(--radius-md);
   background: var(--surface-strong);
-  box-shadow: var(--shadow-md);
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease;
+  box-shadow: var(--shadow-card);
+  cursor: default;
+  transition: box-shadow 140ms ease;
+}
+
+@media (pointer: fine) {
+  .card[data-draggable="true"] {
+    cursor: grab;
+  }
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(9, 30, 66, 0.18);
+}
+
+.card[data-status="todo"] {
+  border-left-color: var(--todo);
+}
+
+.card[data-status="doing"] {
+  border-left-color: var(--doing);
+}
+
+.card[data-status="done"] {
+  border-left-color: var(--done);
 }
 
 .content {
   display: grid;
-  gap: 8px;
+  gap: 4px;
 }
 
 .title {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   line-height: 1.45;
 }
 
 .description {
   margin: 0;
   color: var(--muted);
-  line-height: 1.7;
+  font-size: 0.8rem;
+  line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
 }
@@ -39,49 +58,74 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
 }
 
 .meta {
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .actions {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
 
 .ghostButton,
 .dangerButton,
 .mobileMoveButton {
-  min-height: 36px;
-  padding: 0 14px;
-  border-radius: 999px;
-  font-weight: 700;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .ghostButton {
   border: 1px solid var(--border);
-  background: var(--surface-muted);
+  background: transparent;
+  color: var(--muted);
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.ghostButton:hover:not(:disabled) {
+  background: var(--bg-soft);
   color: var(--text);
 }
 
 .dangerButton {
   border: 1px solid transparent;
-  background: var(--danger-soft);
+  background: transparent;
   color: var(--danger);
+  transition: background 140ms ease;
+}
+
+.dangerButton:hover:not(:disabled) {
+  background: var(--danger-soft);
 }
 
 .mobileMoveActions {
   display: none;
-  gap: 8px;
+  gap: 4px;
 }
 
 .mobileMoveButton {
   border: 1px solid var(--border);
-  background: var(--surface-strong);
+  background: var(--surface-muted);
   color: var(--text);
+}
+
+@media (pointer: coarse), (hover: none) {
+  .mobileMoveActions {
+    display: grid;
+  }
+
+  .ghostButton,
+  .dangerButton,
+  .mobileMoveButton {
+    min-height: var(--control-height-touch);
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 767px) {

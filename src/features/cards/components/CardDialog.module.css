@@ -1,7 +1,7 @@
 .dialog {
-  padding: 28px;
+  padding: 20px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   background: var(--surface-strong);
   box-shadow: var(--shadow-lg);
 }
@@ -10,99 +10,123 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .eyebrow {
-  margin: 0 0 6px;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .title {
   margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .hint {
   margin: 0;
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
   background: var(--surface-muted);
   color: var(--accent-strong);
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 600;
 }
 
 .form {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .field {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .label {
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface-muted);
   color: var(--text);
+  font-size: 0.88rem;
 }
 
 .input:focus {
-  outline: 3px solid rgba(74, 144, 226, 0.18);
-  border-color: var(--border-strong);
+  outline: 2px solid rgba(0, 82, 204, 0.2);
+  border-color: var(--accent);
 }
 
 .textarea {
-  min-height: 140px;
+  min-height: 110px;
 }
 
 .validation {
-  min-height: 1.5em;
+  min-height: 1.4em;
   margin: 0;
-  color: var(--danger);
+  font-size: 0.8rem;
+  color: var(--danger-text);
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
 }
 
 .primaryButton,
 .secondaryButton {
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  font-weight: 700;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .primaryButton {
   border: 0;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  background: var(--accent);
   color: #ffffff;
+  transition: filter 140ms ease;
+}
+
+.primaryButton:hover:not(:disabled) {
+  filter: brightness(1.12);
 }
 
 .secondaryButton {
   border: 1px solid var(--border);
   background: var(--surface-strong);
   color: var(--text);
+  transition: background 140ms ease;
+}
+
+.secondaryButton:hover:not(:disabled) {
+  background: var(--bg-soft);
+}
+
+@media (pointer: coarse) {
+  .primaryButton,
+  .secondaryButton {
+    min-height: var(--control-height-touch);
+  }
 }
 
 @media (max-width: 767px) {
   .dialog {
-    padding: 22px;
+    padding: 16px;
   }
 
   .header,
