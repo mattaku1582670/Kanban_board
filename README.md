@@ -53,8 +53,6 @@ VITE_SUPABASE_URL=https://your-project-ref.supabase.co
 VITE_SUPABASE_ANON_KEY=your-publishable-or-anon-key
 ```
 
-`.env.example` をテンプレートとして使えます。
-
 ## Supabase Setup
 
 このアプリは既存 Supabase プロジェクト内に、以下のテーブルを作成する前提です。
