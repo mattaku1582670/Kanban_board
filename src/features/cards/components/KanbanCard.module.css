@@ -1,0 +1,112 @@
+.card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.content {
+  display: grid;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ghostButton,
+.dangerButton,
+.mobileMoveButton {
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.ghostButton {
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.dangerButton {
+  border: 1px solid transparent;
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.mobileMoveActions {
+  display: none;
+  gap: 8px;
+}
+
+.mobileMoveButton {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+@media (max-width: 767px) {
+  .metaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions,
+  .mobileMoveActions {
+    width: 100%;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mobileMoveActions {
+    display: grid;
+  }
+
+  .ghostButton,
+  .dangerButton,
+  .mobileMoveButton {
+    width: 100%;
+  }
+}

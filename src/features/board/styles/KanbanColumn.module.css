@@ -1,0 +1,132 @@
+.column {
+  --column-accent: var(--doing);
+  --column-soft: rgba(74, 144, 226, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
+    linear-gradient(135deg, var(--column-soft), transparent 48%),
+    var(--surface);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.todo {
+  --column-accent: var(--todo);
+  --column-soft: rgba(243, 177, 77, 0.14);
+}
+
+.doing {
+  --column-accent: var(--doing);
+  --column-soft: rgba(74, 144, 226, 0.12);
+}
+
+.done {
+  --column-accent: var(--done);
+  --column-soft: rgba(57, 162, 123, 0.12);
+}
+
+.over {
+  transform: translateY(-2px);
+  border-color: var(--column-accent);
+  box-shadow: 0 18px 38px rgba(36, 60, 90, 0.18);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  font-size: 1.16rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--column-accent);
+  color: #ffffff;
+  font-size: 0.84rem;
+}
+
+.description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.addButton {
+  border: 1px solid var(--border);
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  font-weight: 700;
+}
+
+.cardList {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.emptyState {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  padding: 20px;
+  border: 1px dashed var(--column-accent);
+  border-radius: var(--radius-md);
+  background: var(--column-soft);
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+@media (max-width: 1023px) {
+  .column {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .column {
+    min-height: 0;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .addButton {
+    width: 100%;
+  }
+}

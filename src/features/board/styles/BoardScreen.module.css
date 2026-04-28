@@ -1,0 +1,59 @@
+.page {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.shell {
+  display: grid;
+  gap: 18px;
+}
+
+.loadingPanel {
+  width: min(720px, 100%);
+  margin: 12vh auto 0;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  color: var(--muted);
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.bannerButton {
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: inherit;
+  font-weight: 700;
+}
+
+.footerNote {
+  margin: 0;
+  padding: 10px 4px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .errorBanner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bannerButton {
+    width: 100%;
+  }
+}

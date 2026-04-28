@@ -1,0 +1,79 @@
+:root {
+  --font-sans: "Aptos", "Segoe UI Variable", "Segoe UI", sans-serif;
+  --bg-base: #f4f8fc;
+  --bg-soft: #eaf3fb;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: #ffffff;
+  --surface-muted: #f6faff;
+  --border: rgba(47, 58, 69, 0.14);
+  --border-strong: rgba(74, 144, 226, 0.3);
+  --text: #2f3a45;
+  --muted: #688095;
+  --accent: #4a90e2;
+  --accent-strong: #2569c7;
+  --danger: #c74a5a;
+  --danger-soft: rgba(199, 74, 90, 0.12);
+  --success-soft: rgba(44, 148, 93, 0.12);
+  --todo: #f3b14d;
+  --doing: #4a90e2;
+  --done: #39a27b;
+  --shadow-lg: 0 24px 70px rgba(36, 60, 90, 0.16);
+  --shadow-md: 0 14px 34px rgba(36, 60, 90, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 18px;
+  --radius-sm: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(74, 144, 226, 0.18), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(57, 162, 123, 0.12), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    var(--bg-base);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, rgba(74, 144, 226, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 144, 226, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 92%);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  color: inherit;
+}

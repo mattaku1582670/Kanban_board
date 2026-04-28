@@ -1,0 +1,118 @@
+.dialog {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 0;
+}
+
+.hint {
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.input:focus {
+  outline: 3px solid rgba(74, 144, 226, 0.18);
+  border-color: var(--border-strong);
+}
+
+.textarea {
+  min-height: 140px;
+}
+
+.validation {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--danger);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.primaryButton {
+  border: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #ffffff;
+}
+
+.secondaryButton {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+@media (max-width: 767px) {
+  .dialog {
+    padding: 22px;
+  }
+
+  .header,
+  .actions {
+    flex-direction: column;
+  }
+
+  .hint,
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

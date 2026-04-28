@@ -1,0 +1,146 @@
+.page {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 48px);
+}
+
+.panel {
+  width: min(560px, 100%);
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0)),
+    var(--surface);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.modeSwitch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.modeButton,
+.modeButtonActive,
+.submitButton {
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.modeButton {
+  background: var(--surface-muted);
+  color: var(--muted);
+}
+
+.modeButtonActive {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(74, 144, 226, 0.24);
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.input {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.input:focus {
+  outline: 3px solid rgba(74, 144, 226, 0.18);
+  border-color: var(--border-strong);
+}
+
+.message,
+.error {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  line-height: 1.65;
+}
+
+.message {
+  background: var(--success-soft);
+  color: #236f4d;
+}
+
+.error {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.submitButton {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(74, 144, 226, 0.24);
+}
+
+.modeButton:hover,
+.modeButtonActive:hover,
+.submitButton:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .page {
+    min-height: auto;
+  }
+
+  .panel {
+    padding: 24px;
+  }
+}
